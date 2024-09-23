@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Socials({
 	setIsModalOpen,
-}: { setIsModalOpen: (isOpen: boolean) => void }) {
+}: { setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>> }) {
 	return (
 		<header className="flex justify-between mb-8">
 			<div className="space-x-2">
