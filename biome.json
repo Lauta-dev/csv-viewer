@@ -1,0 +1,30 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.2/schema.json",
+	"vcs": {
+		"enabled": false,
+		"clientKind": "git",
+		"useIgnoreFile": false
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"ignore": [".git", ".next", ".vercel", ".output", ".env", "node_modules", "dist", "build", "out", "coverage", "public", "cache", "*.log", "*.lock", "*.tmp", "*.temp", "*.tmp.*", "*.test.ts", "*.test.tsx", "*.snap", "*.stories.tsx", "package-lock.json", "yarn.lock", "pnpm-lock.yaml", ".cache", ".cache/", ".cache/*", ".next/", ".next/*", "!.next/cache", "!.next/cache/*", "dist/", "dist/*", "build/", "build/*", "out/", "out/*", "coverage/", "coverage/*", "public/", "public/*", "cache/", "cache/*", "tsconfig.*"]
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab"
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"recommended": true
+		}
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "double"
+		}
+	}
+}
