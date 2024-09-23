@@ -1,3 +1,5 @@
+<img src="./src/assets/feg.png" />
+
 # CSV Viewer
 
 CSV Viewer es una aplicación web que permite a los usuarios cargar y visualizar archivos CSV directamente en su navegador. La aplicación está diseñada para ser rápida y fácil de usar, sin almacenar información del usuario ni cargar archivos a servidores externos.
