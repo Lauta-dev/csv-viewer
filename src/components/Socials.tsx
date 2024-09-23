@@ -1,4 +1,7 @@
 import { Button } from "@/components/ui/button";
+import { info } from "@/info";
+import GitHub from "../assets/github.svg";
+import LinkedIn from "../assets/linkedin.svg";
 
 export default function Socials({
 	setIsModalOpen,
@@ -8,20 +11,20 @@ export default function Socials({
 			<div className="space-x-2">
 				<Button asChild variant="outline" size="sm">
 					<a
-						href="https://github.com"
+						href={info.github}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						GitHub
+						GitHub <img src={GitHub} alt="github" />
 					</a>
 				</Button>
 				<Button asChild variant="outline" size="sm">
 					<a
-						href="https://linkedin.com"
+						href={info.linkedin}
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						LinkedIn
+						LinkedIn <img src={LinkedIn} alt="linkedin" />
 					</a>
 				</Button>
 			</div>
