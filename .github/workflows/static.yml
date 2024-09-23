@@ -38,7 +38,7 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: npm -g install pnpm
+        run: npm -g install pnpm && pnpm i --frozen-lockfile --prod
 
       - name: Build
         run: pnpm run build
