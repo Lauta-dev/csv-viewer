@@ -31,6 +31,7 @@ export default function TableSte({
 						<TableRow key={rowIndex}>
 							{header.map((column, colIndex) => (
 								<TableCell key={`${rowIndex}-${colIndex}`}>
+                  {/* @ts-ignore */}
 									<p className="text-nowrap">{row[column]}</p>
 								</TableCell>
 							))}
