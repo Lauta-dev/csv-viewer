@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
 import Policy from "@/components/policy";
 import Social from "@/components/Socials";
@@ -49,8 +48,15 @@ export default function CSVViewer() {
 									return;
 								}
 
-								const fileContent = data.currentTarget.result;
-								console.log(data);
+                if (data.target?.result === null) {
+									setcsvContent({
+										header: [],
+										content: [],
+									});
+									return;
+								}
+
+								const fileContent = data.target?.result as string;
 								const textParsed = Papa.parse(fileContent, {
 									header: true,
 									skipEmptyLines: true,
