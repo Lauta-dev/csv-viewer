@@ -14,14 +14,16 @@ export default function TableSte({
 	setLimit,
 	currentLimit,
 	fullCsvLength,
-	fileName,
+	filesName,
+	setSelectedFile,
 }: {
 	header: string[];
 	content: string[];
 	setLimit: (limit: number) => void;
 	currentLimit: number;
 	fullCsvLength: number;
-	fileName: string;
+	filesName: string[];
+	setSelectedFile: React.Dispatch<React.SetStateAction<string>>;
 }) {
 	return (
 		<div className="overflow-y-auto max-h-auto">
@@ -29,8 +31,10 @@ export default function TableSte({
 				setLimit={setLimit}
 				currentLimit={currentLimit}
 				fullCsvLength={fullCsvLength}
-				csvFileName={fileName}
+				filesName={filesName}
 				length={fullCsvLength}
+				setSelectedFile={setSelectedFile}
+				csvFileName={"asd"}
 			/>
 
 			<Table className="min-w-full relative">
