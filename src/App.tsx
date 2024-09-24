@@ -15,10 +15,15 @@ export default function CSVViewer() {
 		content: string[];
 	}>();
 
+	const DEFAULT_LIMIT = 65;
+
+	const [limit, setLimit] = useState<number>(DEFAULT_LIMIT);
+	const [fileName, setFileName] = useState<string>("");
+	const [fileLength, setFileInfo] = useState<number>(0);
+
 	return (
 		<div className="min-h-screen bg-background p-4">
 			<Social setIsModalOpen={setIsModalOpen} />
-
 			<main className="flex flex-col items-center justify-center space-y-4">
 				<h1 className="text-2xl font-bold">CSV File Viewer</h1>
 				<div className="grid w-full max-w-sm items-center gap-1.5">
@@ -48,7 +53,7 @@ export default function CSVViewer() {
 									return;
 								}
 
-                if (data.target?.result === null) {
+								if (data.target?.result === null) {
 									setcsvContent({
 										header: [],
 										content: [],
@@ -64,6 +69,9 @@ export default function CSVViewer() {
 
 								const headers = textParsed.meta.fields as string[];
 								const content = textParsed.data as string[];
+
+								setFileName(file.name);
+								setFileInfo(content.length);
 
 								setcsvContent({
 									header: headers,
@@ -82,7 +90,11 @@ export default function CSVViewer() {
 			{csvContent && (
 				<TableSte
 					header={csvContent.header}
-					content={csvContent.content.slice(0, 50)}
+					content={csvContent.content.slice(0, limit)}
+					fullCsvLength={fileLength}
+					setLimit={setLimit}
+					currentLimit={limit}
+					fileName={fileName}
 				/>
 			)}
 		</div>
