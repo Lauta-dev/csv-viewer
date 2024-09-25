@@ -15,6 +15,8 @@ export default function Policy({
 	setIsModalOpen: (isOpen: boolean) => void;
 	isModalOpen: boolean;
 }) {
+	const handleClick = () => setIsModalOpen(false);
+
 	return (
 		<Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
 			<DialogContent>
@@ -27,7 +29,7 @@ export default function Policy({
 					</DialogDescription>
 				</DialogHeader>
 				<DialogFooter>
-					<Button onClick={() => setIsModalOpen(false)}>Close</Button>
+					<Button onClick={handleClick}>Close</Button>
 				</DialogFooter>
 			</DialogContent>
 		</Dialog>

@@ -6,44 +6,23 @@ import {
 	TableRow,
 	TableHead,
 } from "@/components/ui/table";
-import Toolbar from "@/components/Toolbar";
 
 export default function TableSte({
 	header,
 	content,
-	setLimit,
-	currentLimit,
-	fullCsvLength,
-	filesName,
-	setSelectedFile,
+
 }: {
 	header: string[];
 	content: string[];
-	setLimit: (limit: number) => void;
-	currentLimit: number;
-	fullCsvLength: number;
-	filesName: string[];
-	setSelectedFile: React.Dispatch<React.SetStateAction<string>>;
+
 }) {
 	return (
 		<div className="overflow-y-auto max-h-auto">
-			<Toolbar
-				setLimit={setLimit}
-				currentLimit={currentLimit}
-				fullCsvLength={fullCsvLength}
-				filesName={filesName}
-				length={fullCsvLength}
-				setSelectedFile={setSelectedFile}
-				csvFileName={"asd"}
-			/>
-
 			<Table className="min-w-full relative">
 				<TableHeader>
 					<TableRow>
 						{header.map((header) => (
-							<TableHead className="sticky top-0" key={header}>
-								{header}
-							</TableHead>
+							<TableHead key={header}>{header}</TableHead>
 						))}
 					</TableRow>
 				</TableHeader>
@@ -52,6 +31,8 @@ export default function TableSte({
 						<TableRow key={rowIndex}>
 							{header.map((column, colIndex) => (
 								<TableCell key={`${rowIndex}-${colIndex}`}>
+									{/* TODO: Hide row if it is not selected */}
+
 									{/* @ts-ignore */}
 									<p className="text-nowrap">{row[column]}</p>
 								</TableCell>
