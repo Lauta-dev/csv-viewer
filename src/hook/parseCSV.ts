@@ -8,10 +8,11 @@ function useCsvReader() {
 	const [tableContent, setTableContent] = useState<FileContentType>({});
 
 	function parseCsv(files: FileList) {
-		for (let i = 0; i < files.length; i++) {
+		setFirstFile(files[0].name);
+
+    for (let i = 0; i < files.length; i++) {
 			const file = files[i];
 			const reader = new FileReader();
-			setFirstFile(files[0].name);
 
 			setNamesOfFiles((prev) => prev.concat(file.name));
 

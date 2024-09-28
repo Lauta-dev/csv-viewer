@@ -33,7 +33,7 @@ export default function CSVViewer() {
 						setLimit={setLimit}
 						currentLimit={limit}
 						filesName={namesOfFiles}
-						length={10}
+						length={tableContent[selectedFile ?? firstFile].contentLength}
 						setSelectedFile={setSelectedFile}
 					/>
 					<TableSte

@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 
 import ChoiseFile from "@/components/ChoiseFile";
 import { DEFAULT_LIMIT, DEFAULT_START } from "@/const";
+import { ToolbarProps } from "@/interface/ToolbarProps";
 
 export default function Toolbar({
 	setLimit,
@@ -10,13 +11,10 @@ export default function Toolbar({
 	filesName,
 	setSelectedFile,
 	length,
-}: {
-	setLimit: (limit: number) => void;
-	currentLimit: number;
-	length: number;
-	filesName: string[];
-	setSelectedFile: React.Dispatch<React.SetStateAction<string>>;
-}) {
+}: ToolbarProps) {
+
+
+
 	function handleClick() {
 		setLimit((prev) => prev + DEFAULT_LIMIT);
 	}
