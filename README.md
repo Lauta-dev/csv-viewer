@@ -1,4 +1,4 @@
-<img src="./src/assets/feg.png" />
+![foto](./public/screenshoot.png)
 
 # CSV Viewer
 
