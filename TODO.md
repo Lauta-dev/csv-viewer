@@ -1,0 +1,7 @@
+- [ ] text-nowrap in table header
+- [ ] Make logic for row increment, for example if table contain 150 rows, not next the max row
+- [ ] Hide file's input after upload files (thinking)
+- [ ] Switch SVG in tab depend system theme
+- [ ] Dark mode
+- [ ] Cut string if pass 100 words
+- [ ] Blur style in toolbar
