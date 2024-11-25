@@ -31,8 +31,6 @@ export default function TableSte({
 						<TableRow key={rowIndex}>
 							{header.map((column, colIndex) => (
 								<TableCell key={`${rowIndex}-${colIndex}`}>
-									{/* TODO: Hide row if it is not selected */}
-
 									{/* @ts-ignore */}
 									<p className="text-nowrap">{row[column]}</p>
 								</TableCell>
