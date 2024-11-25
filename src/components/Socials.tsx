@@ -13,7 +13,7 @@ export default function Socials() {
 
 	return (
 		<>
-			<header className="flex justify-between mb-8">
+			<header className="relative flex justify-between items-center mb-8">
 				<div className="space-x-2">
 					<Button asChild variant="outline" size="sm">
 						<a href={info.github} target="_blank" rel="noopener noreferrer">
@@ -26,6 +26,11 @@ export default function Socials() {
 						</a>
 					</Button>
 				</div>
+
+				<h1 className="max-[425px]:hidden absolute left-1/2 -translate-x-1/2 text-2xl font-bold">
+					CSV File Viewer
+				</h1>
+
 				<Button onClick={() => setIsModalOpen(true)} size="sm">
 					Policies
 				</Button>
