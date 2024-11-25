@@ -25,7 +25,7 @@ export default function CSVViewer() {
 		<main className="min-h-screen bg-background p-4">
 			<Social />
 
-			<UploadFile onChange={onChange} />
+			{firstFile ? null : <UploadFile onChange={onChange} />}
 
 			{firstFile && tableContent[firstFile] ? (
 				<div>
@@ -35,6 +35,7 @@ export default function CSVViewer() {
 						filesName={namesOfFiles}
 						length={tableContent[selectedFile ?? firstFile].contentLength}
 						setSelectedFile={setSelectedFile}
+						onChange={onChange}
 					/>
 					<TableSte
 						header={tableContent[selectedFile ?? firstFile].headers}
@@ -42,7 +43,6 @@ export default function CSVViewer() {
 							0,
 							limit,
 						)}
-
 					/>
 				</div>
 			) : null}
